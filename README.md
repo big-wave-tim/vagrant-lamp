@@ -16,3 +16,12 @@ Has some defines to configure for each project, such as
 * VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
 * 
 Have added "vagrant" to hosts file with value of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
+
+##TODO
+Some things I am considering to include in the future
+* [MailCatcher](http://mailcatcher.me/)
+* Git
+* Vim
+* [Webmin](http://www.webmin.com/)
+* Off line cache for popular add-ons such as jQuery, Bootstrap, Font Awesome etc.
+* A way to store the VirtualBox machine in the same folder as the Vagrant stuff
