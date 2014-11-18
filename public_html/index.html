@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Vagrant development machine</title>
+    </head>
+    <body>
+        
+        <h1>Vagrant LAMP machine</h1> 
+        
+        <p>Machine based on the <a href="https://vagrantcloud.com/avenuefactory/boxes/lamp">avenuefactory/lamp</a> Vagrant box</p>
+        <ul>
+            <li>LAMP using Ubuntu, Apache, MySQL, PHP 5.5 with PHPMyAdmin</li>
+            <li>Hashicorp Precise 64 installation, with a lean LAMP server installed on top. Specifically, this comes with Apache, MySQL, and PHP 5.5 installed, along with PHPMyAdmin.</li>
+        </ul>
+        
+        <h3>MySQL</h3>
+        <ul>
+            <li>Username = "root"</li>
+            <li>Password = "root"</li>
+            <li>phpMyAdmin = <a href="http://vagrant/phpmyadmin">http://vagrant/phpmyadmin</a></li>     
+        </ul>
+        
+        <h3>Vagrant File</h3>
+        <p>Has some defines to configure for each project, such as</p>
+        <ul>
+            <li>VAGRANT_MACHINE_NAME = "vagrant-machine-name"</li>
+            <li>VAGRANT_MACHINE_HOST_NAME = "vagrant"</li>
+            <li>VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"</li>
+        </ul>
+        
+        <p>Have added &quot;vagrant&quot; to hosts file with value of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS</p>
+        
+    </body>
+</html>
