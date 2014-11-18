@@ -2,16 +2,21 @@
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Vagrant development machine</title>
+        <title>Vagrant LAMP machine</title>
+        <style>
+        body {
+            font-family: sans-serif;
+        }
+        </style>
     </head>
     <body>
         
         <h1>Vagrant LAMP machine</h1> 
         
-        <p>Machine based on the <a href="https://vagrantcloud.com/avenuefactory/boxes/lamp">avenuefactory/lamp</a> Vagrant box</p>
+        <p><strong>For developing websites and applications that use the LAMP stack. This machine includes Ubuntu 14.04 Trusty Tahr, Apache, MySQL, PHP 5.5 and PHPMyAdmin</strong></p>
         <ul>
-            <li>LAMP using Ubuntu, Apache, MySQL, PHP 5.5 with PHPMyAdmin</li>
-            <li>Hashicorp Precise 64 installation, with a lean LAMP server installed on top. Specifically, this comes with Apache, MySQL, and PHP 5.5 installed, along with PHPMyAdmin.</li>
+            <li>Uses the avenuefactory/lamp Vagrant box</li>
+            <li>The avenuefactory/lamp Vagrant box is based on the Hashicorp/Precise64 Vagrant box, with a lean LAMP server installed on top. Specifically, it comes with Apache, MySQL, PHP 5.5 and PHPMyAdmin installed.</li>
         </ul>
         
         <h3>MySQL</h3>
@@ -27,9 +32,18 @@
             <li>VAGRANT_MACHINE_NAME = "vagrant-machine-name"</li>
             <li>VAGRANT_MACHINE_HOST_NAME = "vagrant"</li>
             <li>VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"</li>
+            <li>Have added &quot;vagrant&quot; to hosts file with value of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS</li>
         </ul>
         
-        <p>Have added &quot;vagrant&quot; to hosts file with value of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS</p>
+        <h3>TODO</h3>
+        <ul>
+            <li>MailCatcher</li>
+            <li>Git</li>
+            <li>Vim</li>
+            <li>Webmin</li>
+            <li>Off line cache for popular add-ons such as jQuery, Bootstrap, Font Awesome etc.</li>
+            <li>A way to store the VirtualBox machine in the same folder as the Vagrant stuff</li>
+        </ul>
         
     </body>
 </html>
