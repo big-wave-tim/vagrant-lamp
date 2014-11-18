@@ -1,5 +1,5 @@
 # Vagrant LAMP machine
-** For developing websites and applications that use the LAMP stack. This machine includes Ubuntu 14.04 Trusty Tahr, Apache, MySQL, PHP 5.5 and PHPMyAdmin**
+**For developing websites and applications that use the LAMP stack. This machine includes Ubuntu 14.04 Trusty Tahr, Apache, MySQL, PHP 5.5 and PHPMyAdmin**
 
 * Uses the [avenuefactory/lamp](https://vagrantcloud.com/avenuefactory/boxes/lamp) Vagrant box
 * The [avenuefactory/lamp](https://vagrantcloud.com/avenuefactory/boxes/lamp) Vagrant box is based on the [Hashicorp/Precise64](https://vagrantcloud.com/hashicorp/boxes/precise64) Vagrant box, with a lean LAMP server installed on top. Specifically, it comes with Apache, MySQL, PHP 5.5 and PHPMyAdmin installed.
