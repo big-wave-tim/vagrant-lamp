@@ -10,7 +10,7 @@
 * Nodejs via nvm (Node Version Manager)
 * Mailcatcher
 
-##Vagrant configuration
+##Vagrant Configuration
 A fairly standard vagrant based on the ubuntu/trusty64 box. Provisioning is achieved using the bootstrap.sh script. The Vagrant file has some defines in it that can be configure for each project or your needs, such as
 * VAGRANT_MACHINE_NAME = "vagrant-machine-name"
 * VAGRANT_MACHINE_HOST_NAME = "vagrant"
