@@ -11,12 +11,11 @@
 * Mailcatcher
 
 ##Vagrant configuration
-The Vagrant has some defines in it that can be configure for each project or your needs, such as
+A fairly standard vagrant based on the ubuntu/trusty64 box. Provisioning is achieved using the bootstrap.sh script. The Vagrant file has some defines in it that can be configure for each project or your needs, such as
 * VAGRANT_MACHINE_NAME = "vagrant-machine-name"
 * VAGRANT_MACHINE_HOST_NAME = "vagrant"
 * VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
 * Add the value of VAGRANT_MACHINE_HOST_NAME to the host machines hosts with the ip addressed configured for VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
-* Provisioning is achieved using the bootstrap.sh script.
 
 ##MySQL
 * Username = "root"
