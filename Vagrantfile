@@ -11,19 +11,19 @@
 # Some basic configuraition definitions
 VAGRANTFILE_API_VERSION = "2"
 VAGRANT_MACHINE_NAME = "vagrant-machine-name"
-VAGRANT_MACHINE_HOST_NAME = "vagrant"
+VAGRANT_MACHINE_HOST_NAME = "vagrant-hostname"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     # Box to base machine on
-    config.vm.box = "avenuefactory/lamp"
+    config.vm.box = "ubuntu/trusty64"
     
     # Networking
     config.vm.network :private_network, ip: VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
     
     # Synchronised folder
-    config.vm.synced_folder "./public_html", "/var/www/html", owner: 'vagrant', group: 'www-data', mount_options: ['dmode=776', 'fmode=775']
+    config.vm.synced_folder "./html", "/var/www/html", owner: 'vagrant', group: 'www-data', mount_options: ['dmode=776', 'fmode=775']
     
     # Host name
     config.vm.hostname = VAGRANT_MACHINE_HOST_NAME
@@ -32,5 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provider :virtualbox do |v|
         v.name = VAGRANT_MACHINE_NAME;
     end
+    
+    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS],  privileged:false
     
 end
