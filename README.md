@@ -20,10 +20,10 @@ A fairly standard vagrant based on the ubuntu/trusty64 box. Provisioning is achi
 ##MySQL
 * Username = "root"
 * Password = "root"
-* phpMyAdmin = http://vagrant/phpmyadmin
+* phpMyAdmin = http://VAGRANT_MACHINE_HOST_NAME/phpmyadmin
 
 ##Mailcatcher
-* Mailcatcher can been seen at http://vagrant:1080/
+* Mailcatcher can been seen at http://VAGRANT_MACHINE_HOST_NAME:1080/
 * catcher has been added to the php.ini files sendmail_path directives
 
 ##TODO
