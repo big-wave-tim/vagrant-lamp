@@ -15,37 +15,42 @@
         <p><strong>For developing websites and applications that use the LAMP stack. This machine includes </strong></p>
         <ul>
             <li><a href="https://vagrantcloud.com/ubuntu/boxes/trusty64">Ubuntu 14.04 Trusty Tahr</a></li>
-            <li><a href="http://vagrant/">Apache 2.4</a></li>
-            <li><a href="http://vagrant/phpmyadmin">MySQL 5.5</a></li>
-            <li><a href="http://vagrant/phpinfo.php">PHP 5.5</a></li>
-            <li><a href="http://vagrant/phpmyadmin">phpMyAdmin</a></li>
+            <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%/">Apache 2.4</a></li>
+            <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpmyadmin">MySQL 5.5</a></li>
+            <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpinfo.php">PHP 5.5</a></li>
+            <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpmyadmin">phpMyAdmin</a></li>
             <li>Ruby via rvm (Ruby Version Manager)</li>
             <li>Nodejs via nvm (Node Version Manager)</li>
-            <li><a href="http://vagrant:1080/">Mailcatcher</a> <small>* don't forget to start the daemon first</small></li>
-        </ul>
-                
-        <h3>MySQL</h3>
-        <ul>
-            <li>Username = "root"</li>
-            <li>Password = "root"</li>
-            <li>phpMyAdmin = <a href="http://vagrant/phpmyadmin">http://vagrant/phpmyadmin</a></li>     
+            <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%:1080/">Mailcatcher</a> <small>* don't forget to start the daemon first</small></li>
         </ul>
         
-        <h3>Mailcatcher</h3>
-        <ul>
-            <li>ssh into the machine and run &quot;mailcatcher --http-ip=$VAGRANT_PRIVATE_NETWORK_IP_ADDRESS&quot; to start daemon</li>
-            <li>catcher has been added to the php.ini files sendmail_path directives</li>
-            <li>Mailcatcher can been seen at <a href="http://vagrant:1080/">http://vagrant:1080/</a></li>
-        </ul>
+        
         
         <h3>Vagrant File</h3>
         <p>Has some defines to configure for each project, such as</p>
         <ul>
-            <li>VAGRANT_MACHINE_NAME = "vagrant-machine-name"</li>
-            <li>VAGRANT_MACHINE_HOST_NAME = "vagrant"</li>
+            <li>VAGRANT_MACHINE_NAME = "vagrant-machine-name" &nbsp;&nbsp;&nbsp;# the name of the machine to VirtualBox</li>
+            <li>VAGRANT_MACHINE_HOST_NAME = "vagrant"   &nbsp;&nbsp;&nbsp;# Guests host name</li>
             <li>VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"</li>
-            <li>I have added &quot;vagrant&quot; to the host machines hosts file with the value equal to that of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS</li>
+            <li>Add VAGRANT_MACHINE_HOST_NAME to the host machines hosts file with a value equal to that of VAGRANT_PRIVATE_NETWORK_IP_ADDRESS</li>
         </ul>
+        
+        
+        
+        <h3>MySQL</h3>
+        <ul>
+            <li>Username = "root"</li>
+            <li>Password = "root"</li>
+            <li>phpMyAdmin = <a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpmyadmin">http://vagrant/phpmyadmin</a></li>     
+        </ul>
+        
+        <h3>Mailcatcher</h3>
+        <ul>
+            <li>catcher has been added to the php.ini files sendmail_path directives</li>
+            <li>Mailcatcher can been seen at <a href="http://%VAGRANT_MACHINE_HOST_NAME%:1080/">http://vagrant:1080/</a></li>
+        </ul>
+        
+        
         
         <h3>TODO</h3>
         <ul>
