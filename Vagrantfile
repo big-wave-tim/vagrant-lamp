@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     # Synchronised folder
     config.vm.synced_folder "./html", "/var/www/html", owner: 'vagrant', group: 'www-data', mount_options: ['dmode=776', 'fmode=775']
-    
+      
     # Host name
     config.vm.hostname = VAGRANT_MACHINE_HOST_NAME
     
@@ -33,6 +33,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.name = VAGRANT_MACHINE_NAME;
     end
     
+    
+    
     config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS],  privileged:false
     
 end
+

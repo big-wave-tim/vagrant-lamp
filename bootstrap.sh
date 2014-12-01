@@ -109,5 +109,23 @@ cp /vagrant/index.html /var/www/html
 #npm install -g bower grunt-cli yo
 #
 #
+# add nice prompt to the shell
+cat >> ~/.bashrc <<"EOF"
+black="\[\033[30m\]"
+red="\[\033[31m\]"
+green="\[\033[32m\]"
+yellow="\[\033[33m\]"
+dk_blue="\[\033[34m\]"
+pink="\[\033[35m\]"
+lt_blue="\[\033[36m\]"
+bold="\[\033[1m\]"
+reset="\[\033[0m\]"
+PS1='\[\033]0;\@ \u@\h - ${PWD//[^[:ascii:]]/?}\007\]' # set window title
+PS1="$PS1\n$bold$black[$lt_blue\@$black] - "
+PS1="$PS1[$green\u$yellow@$green\h$black] - "
+PS1="$PS1[$pink\w$black]"
+PS1="$PS1$reset\n$reset\$ "
+EOF
+
 TIME=$(date)
 echo -e "${HIGHLIGHT}  END TIME =  $TIME"
