@@ -15,7 +15,7 @@ A fairly standard vagrant based on the ubuntu/trusty64 box. Provisioning is achi
 * VAGRANT_MACHINE_NAME = "vagrant-machine-name"
 * VAGRANT_MACHINE_HOST_NAME = "vagrant"
 * VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
-* Add the value of VAGRANT_MACHINE_HOST_NAME to the host machines hosts with the ip addressed configured for VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
+* Add the value of VAGRANT_MACHINE_HOST_NAME to the host machines hosts file with the ip addressed configured for VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
 
 ##MySQL
 * Username = "root"
