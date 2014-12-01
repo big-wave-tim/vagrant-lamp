@@ -13,7 +13,7 @@ echo -e "${HIGHLIGHT}  START TIME =  $TIME"
 ###############################################################
 echo -e "${HIGHLIGHT}  1) update package list and fetch utils for installing other things "
 ###############################################################
-sudo apt-get update
+sudo apt-get update > /dev/null
 sudo apt-get install -y build-essential git > /dev/null
 #
 #
