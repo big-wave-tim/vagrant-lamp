@@ -73,15 +73,16 @@ rvm use ruby --default
 #
 #
 if [[ "$INSTALL_NODE" == "true" ]]
-################################################################
-echo -e "${HIGHLIGHT}  7) Nodejs Install and configure "  
-###############################################################
-curl https://raw.githubusercontent.com/creationix/nvm/v0.18.0/install.sh | bash
-source ~/.nvm/nvm.sh
-nvm install stable
-nvm use stable
-npm install npm -g
-echo "nvm use stable" >> ~/.bashrc
+then
+    ################################################################
+    echo -e "${HIGHLIGHT}  7) Nodejs Install and configure "  
+    ###############################################################
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.18.0/install.sh | bash
+    source ~/.nvm/nvm.sh
+    nvm install stable
+    nvm use stable
+    npm install npm -g
+    echo "nvm use stable" >> ~/.bashrc
 fi
 #
 #
