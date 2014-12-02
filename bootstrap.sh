@@ -2,6 +2,7 @@
 #
 VAGRANT_MACHINE_HOST_NAME=$1
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS=$2
+INSTALL_NODE=$3
 HIGHLIGHT='\e[42m'
 TIME=$(date)
 #
@@ -71,6 +72,7 @@ rvm use --install ruby
 rvm use ruby --default
 #
 #
+if [[ "$INSTALL_NODE" == "true" ]]
 ################################################################
 echo -e "${HIGHLIGHT}  7) Nodejs Install and configure "  
 ###############################################################
@@ -80,6 +82,7 @@ nvm install stable
 nvm use stable
 npm install npm -g
 echo "nvm use stable" >> ~/.bashrc
+fi
 #
 #
 ###############################################################

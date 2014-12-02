@@ -13,6 +13,7 @@ VAGRANTFILE_API_VERSION = "2"
 VAGRANT_MACHINE_NAME = "vagrant-machine-name"
 VAGRANT_MACHINE_HOST_NAME = "vagrant"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
+INSTALL_NODE=false
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
@@ -35,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     
     
-    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS],  privileged:false
+    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, INSTALL_NODE],  privileged:false
     
 end
 
