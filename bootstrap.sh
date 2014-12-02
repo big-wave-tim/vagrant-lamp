@@ -13,14 +13,14 @@ echo -e "${HIGHLIGHT}  START TIME =  $TIME"
 ###############################################################
 echo -e "${HIGHLIGHT}  1) update package list and fetch utils for installing other things "
 ###############################################################
-sudo apt-get update > /dev/null
-sudo apt-get install -y build-essential git > /dev/null
+sudo apt-get update 
+sudo apt-get install -y build-essential git 
 #
 #
 ###############################################################
 echo -e "${HIGHLIGHT}  2) Apache2 - Install and configure "
 ###############################################################
-sudo apt-get install -y apache2  apache2-utils > /dev/null
+sudo apt-get install -y apache2  apache2-utils 
 echo "ServerName" $VAGRANT_MACHINE_HOST_NAME | sudo tee /etc/apache2/conf-available/servername.conf
 sudo a2enconf servername
 sudo a2enmod rewrite
@@ -33,13 +33,13 @@ echo -e "${HIGHLIGHT}  3) MySql - Install and configure "
 # Set MySQL root password
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password root'
-sudo apt-get install -y  mysql-server > /dev/null
+sudo apt-get install -y  mysql-server 
 #
 #
 ###############################################################
 echo -e "${HIGHLIGHT}  4) PHP5 - Install and configure "
 ###############################################################
-sudo apt-get -y install php5 libapache2-mod-php5 php5-mysql  php5-mcrypt > /dev/null
+sudo apt-get -y install php5 libapache2-mod-php5 php5-mysql  php5-mcrypt 
 sudo php5enmod mcrypt
 sudo sed -i '/display_errors = Off/c display_errors = On' /etc/php5/apache2/php.ini
 sudo sed -i '/error_reporting = E_ALL & ~E_DEPRECATED/c error_reporting = E_ALL' /etc/php5/apache2/php.ini
@@ -54,7 +54,7 @@ sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/admin-user string r
 sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/admin-pass password root'
 sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/app-pass password root'
 sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/app-password-confirm password root'
-sudo apt-get -y install phpmyadmin > /dev/null
+sudo apt-get -y install phpmyadmin 
 #
 #
 ###############################################################
@@ -101,7 +101,7 @@ echo "@reboot vagrant $MAILCATCHER --http-ip=$VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
 # create some initial files for info/reference
 ###############################################################
 echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php
-sed -e "s;%VAGRANT_MACHINE_HOST_NAME%;$VAGRANT_MACHINE_HOST_NAME;g"  index.html > html/index.html
+sed -e "s;%VAGRANT_MACHINE_HOST_NAME%;$VAGRANT_MACHINE_HOST_NAME;g"  /vagrant/index.html > /var/www/html/index.html
 #
 #gem install foundation --no-ri --no-rdoc
 #gem install compass --no-ri --no-rdoc
