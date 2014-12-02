@@ -11,7 +11,7 @@
 # Some basic configuraition definitions
 VAGRANTFILE_API_VERSION = "2"
 VAGRANT_MACHINE_NAME = "vagrant-machine-name"
-VAGRANT_MACHINE_HOST_NAME = "vagrant-hostname"
+VAGRANT_MACHINE_HOST_NAME = "vagrant"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
