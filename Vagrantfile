@@ -10,10 +10,12 @@
 
 # Some basic configuraition definitions
 VAGRANTFILE_API_VERSION = "2"
-VAGRANT_MACHINE_NAME = "vagrant-machine-name"
+VAGRANT_MACHINE_NAME = "vagrant-lamp-virtual-machine"
 VAGRANT_MACHINE_HOST_NAME = "vagrant"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
-INSTALL_NODE="false"
+USE_CACHED_DEBS="true"
+INSTALL_NODEJS="false"
+INSTALL_RUBY="false"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
@@ -34,9 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.name = VAGRANT_MACHINE_NAME;
     end
     
-    
-    
-    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, INSTALL_NODE],  privileged:false
+    # Run the provisioning script
+    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, USE_CACHED_DEBS, INSTALL_NODEJS, INSTALL_RUBY],  privileged:false
     
 end
 
