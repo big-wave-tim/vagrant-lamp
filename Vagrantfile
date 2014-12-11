@@ -14,8 +14,8 @@ VAGRANT_MACHINE_NAME = "vagrant-lamp-virtual-machine"
 VAGRANT_MACHINE_HOST_NAME = "vagrant"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
 USE_CACHED_DEBS="true"
-INSTALL_NODEJS="false"
-INSTALL_RUBY="false"
+INSTALL_NODEJS="true"
+INSTALL_RUBY="true"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
@@ -34,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Set machine name for VirtualBox
     config.vm.provider :virtualbox do |v|
         v.name = VAGRANT_MACHINE_NAME;
+	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     end
     
     # Run the provisioning script

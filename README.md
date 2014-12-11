@@ -1,4 +1,4 @@
-# Vagrant LAMP Virtual Machine (with Ruby and Nodejs)
+# Vagrant LAMP Virtual Machine (with Ruby and/or Nodejs optionally)
 **For developing websites and applications that use the LAMP stack. This machine includes**
 
 * [Ubuntu 14.04 Trusty Tahr](https://vagrantcloud.com/ubuntu/boxes/trusty64) - ubuntu/trusty64 box
