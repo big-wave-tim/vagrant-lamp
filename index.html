@@ -9,9 +9,9 @@
         </style>
     </head>
     <body>
-        
-        <h1>Vagrant LAMP Virtual Machine (with Ruby and/or Nodejs optionally)</h1> 
-        
+
+        <h1>Vagrant LAMP Virtual Machine (with Ruby and/or Nodejs optionally)</h1>
+
         <p><strong>For developing websites and applications that use the LAMP stack. This machine includes </strong></p>
         <ul>
             <li><a href="https://vagrantcloud.com/ubuntu/boxes/trusty64">Ubuntu 14.04 Trusty Tahr</a></li>
@@ -23,9 +23,9 @@
             <li>Ruby via rvm (Ruby Version Manager) - (optional)</li>
             <li><a href="http://%VAGRANT_MACHINE_HOST_NAME%:1080/">Mailcatcher</a> - (only if Ruby is installed)</li>
         </ul>
-        
-        
-        
+
+
+
         <h3>Vagrant Configuration</h3>
         <p>Has some defines to configure for each project, such as</p>
         <ul>
@@ -37,23 +37,23 @@
             <li>INSTALL_NODEJS = (true/false) install or not</li>
             <li>INSTALL_RUBY = (true/false) install or not (will also install mailcather if true)</li>
         </ul>
-        
-        
+
+
         <h3>MySQL</h3>
         <ul>
             <li>Username = "root"</li>
             <li>Password = "root"</li>
-            <li>phpMyAdmin = <a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpmyadmin">http://vagrant/phpmyadmin</a></li>     
+            <li>phpMyAdmin = <a href="http://%VAGRANT_MACHINE_HOST_NAME%/phpmyadmin">http://vagrant/phpmyadmin</a></li>
         </ul>
-        
-        
+
+
         <h3>Mailcatcher</h3>
         <ul>
             <li>catcher has been added to the php.ini files sendmail_path directives</li>
             <li>Mailcatcher can been seen at <a href="http://%VAGRANT_MACHINE_HOST_NAME%:1080/">http://vagrant:1080/</a></li>
         </ul>
-        
-        
+
+
         <h3>TODO/IDEAS</h3>
         <ul>
             <li>scripts to install popular CMSs</li>
@@ -61,6 +61,6 @@
             <li>Off line cache for popular add-ons such as jQuery, Bootstrap, Font Awesome etc.</li>
             <li>A way to store the VirtualBox machine in the same folder as the rest of the project</li>
         </ul>
-        
+
     </body>
 </html>

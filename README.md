@@ -1,4 +1,4 @@
-# Vagrant LAMP Virtual Machine
+# Vagrant LAMP Virtual Machine  
 ## Otionally installs Ruby and/or Nodejs)
 **For developing websites and applications that use the LAMP stack. This machine includes**
 

@@ -18,27 +18,26 @@ INSTALL_NODEJS="true"
 INSTALL_RUBY="true"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    
+
     # Box to base machine on
     config.vm.box = "ubuntu/trusty64"
-    
+
     # Networking
     config.vm.network :private_network, ip: VAGRANT_PRIVATE_NETWORK_IP_ADDRESS
-    
+
     # Synchronised folder
     config.vm.synced_folder "./html", "/var/www/html", owner: 'vagrant', group: 'www-data', mount_options: ['dmode=776', 'fmode=775']
-      
+
     # Host name
     config.vm.hostname = VAGRANT_MACHINE_HOST_NAME
-    
+
     # Set machine name for VirtualBox
     config.vm.provider :virtualbox do |v|
         v.name = VAGRANT_MACHINE_NAME;
 	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     end
-    
+
     # Run the provisioning script
     config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, USE_CACHED_DEBS, INSTALL_NODEJS, INSTALL_RUBY],  privileged:false
-    
-end
 
+end
