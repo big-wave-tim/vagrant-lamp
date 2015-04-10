@@ -4,16 +4,13 @@
 # Basic Vagrant development machine
 
 # Based on Hashicorp Precise 64 installation, with a lean LAMP server installed on top. Specifically, this comes with Apache, MySQL, and PHP 5.5 installed, along with PHPMyAdmin.
-# http://vagrant/
-# http://vagrant/phpmyadmin Username = "root", Password = "root"
-#
+# Inaddition NodeJS and Ruby can be installed
 
 # Some basic configuraition definitions
 VAGRANTFILE_API_VERSION = "2"
 VAGRANT_MACHINE_NAME = "vagrant-lamp-virtual-machine"
 VAGRANT_MACHINE_HOST_NAME = "vagrant"
 VAGRANT_PRIVATE_NETWORK_IP_ADDRESS = "192.168.10.10"
-USE_CACHED_DEBS="true"
 INSTALL_NODEJS="true"
 INSTALL_RUBY="true"
 
@@ -33,11 +30,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Set machine name for VirtualBox
     config.vm.provider :virtualbox do |v|
-        v.name = VAGRANT_MACHINE_NAME;
-	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+        v.name = VAGRANT_MACHINE_NAME
+        v.memory = 1024
+	      v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     end
 
     # Run the provisioning script
-    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, USE_CACHED_DEBS, INSTALL_NODEJS, INSTALL_RUBY],  privileged:false
+    config.vm.provision "shell", path: "bootstrap.sh", args: [VAGRANT_MACHINE_HOST_NAME, VAGRANT_MACHINE_NAME, VAGRANT_PRIVATE_NETWORK_IP_ADDRESS, INSTALL_NODEJS, INSTALL_RUBY],  privileged:false
 
 end
