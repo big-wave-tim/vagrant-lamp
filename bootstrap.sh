@@ -123,8 +123,10 @@ exe sudo apt-get -y install phpmyadmin
 ###############################################################
 if [ "$INSTALL_NODEJS" == "true" ]; then
   msg "Nodejs Install and configure"
-  # installing this font lib for phantomJS that the yeoman webapp generator needs
-  exe sudo apt-get install -y libfontconfig
+  # libfontconfig is needed for phantomJS that the yeoman webapp generator (and perhaps others) uses
+  # libpng-dev, libjpeg-turbo-progs, gifsicle is maybe needed for grunt-contrib-imagemin
+  # default-jre is needed for grunt-html that validates html locally using java
+  exe sudo apt-get install -y libfontconfig default-jre
   exe eval 'curl -sL https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash'
   #source ~/.bashrc !! this doesn't work for some reason
   #two lines below are what gets added to .bashrc so added them here as source wouldn't work
