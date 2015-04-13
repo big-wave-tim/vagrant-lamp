@@ -38,10 +38,4 @@ If you chose to install NodeJS
 * Yeoman has the basic web app and Zurb Foundation 5 generators installed - you can add more if you like
 * Vagrant with VirtualBox on Windows has issues with long path names found in node_modules folders. To get around this symlink (ln) your node_modules folder to a location that is not shared between the host & guest e.g. ln -s ~/node_modules_for_project_x node_modules
 
-##TODO/IDEAS
-* Option to run apt-get upgrade during provisioning
-* Add more options to optionally install more components e.g. apache, mysql etc
-* scripts to install popular CMSs
-* Offline cache for popular add-ons such as jQuery, Bootstrap, Font Awesome etc.
-* [Webmin](http://www.webmin.com/)
-* A way to store the VirtualBox machine in the same folder as the rest of the project
+##[TODO & Ideas](todo.md)
